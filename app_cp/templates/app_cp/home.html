@@ -18,8 +18,8 @@
     <br>
     <div class="container">
         <div class="row">
-            <div class="col-3"></div>
-            <div class="col-6">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
                 <form id="criptografarForm">
                     <div class="mb-3">
                         <label for="textodigitado" class="form-label"><strong>Texto para Criptografar</strong></label>
@@ -29,13 +29,13 @@
                     <button type="button" class="btn btn-primary" onclick="criptografarTexto()">Criptografar</button>
                 </form>
                 <br>
-                <strong>Texto Criptografado:</strong>
                 <button id="copiarBtn" class="btn btn-secondary btn-block" style="display: none; width: 100%;" onclick="copiarTexto()">Copiar Texto</button>
                 <div id="resultado" class="alert alert-info" style="display: none; max-height: 150px; overflow-y: auto; word-wrap: break-word;">
+                    <strong>Texto Criptografado:</strong>
                     <span id="textocriptografado"></span>
                 </div>
             </div>
-            <div class="col-3"></div>
+            <div class="col-md-1"></div>
         </div>
     </div>
 
@@ -82,8 +82,8 @@
     <br>
     <div class="container">
         <div class="row">
-            <div class="col-3"></div>
-            <div class="col-6">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
                 <form id="descriptografarForm">
                     <div class="mb-3">
                         <label for="textoCriptografadoDigitado" class="form-label"><strong>Texto para Descriptografar</strong></label>
@@ -93,15 +93,15 @@
                     <button type="button" class="btn btn-primary" onclick="descriptografarTexto()">Descriptografar</button>
                 </form>
                 <br>
-                <strong>Texto Descriptografado:</strong>
                 <button id="copiarBtnDesc" class="btn btn-secondary btn-block" style="display: none; width: 100%;" onclick="copiarTextoDescriptografado()">
                     Copiar Texto
                 </button>
                 <div id="resultado-descriptografado" class="alert alert-info" style="display: none; max-height: 150px; overflow-y: auto; word-wrap: break-word;">
+                    <strong>Texto Descriptografado:</strong>
                     <span id="textoDescriptografado"></span>
                 </div>
             </div>
-            <div class="col-3"></div>
+            <div class="col-md-1"></div>
         </div>
     </div>
 
