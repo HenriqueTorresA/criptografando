@@ -5,7 +5,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import json
 
-CHAVE_ALFABETO_BASE62 = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'+'@#$&()['
+CHAVE_ALFABETO_BASE62 = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'+'@#$&()[]'
 CHAVE_POSSIBILIDADE_PRIMOS = [3511, 7901, 4513, 6581, 6229, 1129, 2339, 1009, 5827]
 CHAVE_XOR = 0xF2D431B6A7C9E0D5F8B7E1C2A0F16D4F9B8E7A0C5D2F1A3B6C9E0D2A5F4B6C7
 
@@ -82,7 +82,6 @@ def texto_para_ascii(texto): # transforma o texto original em ascii
     ascii = ascii.strip()
     return ascii
 
-# ---------------------------
 # multiplica cada número do ASCII por um primo aleatório de uma lista
 def multiplicar_ascii(ascii): 
     # CHAVE: lista de números primos para serem escolhidos aleatoriamente
@@ -93,7 +92,6 @@ def multiplicar_ascii(ascii):
     ascii_atual = ''
     ascii_multiplicado_resultado_xor_base62 = ''
     # Adicionar um número aleatório de 5 dígitos e o índice da lista no início do resultado ascii mutiplicado
-    ######ascii_multiplicado_resultado = str(random.randint(10000, 99999))+str(index_escolha_aleatoria)+' '
     # rodar a string do ascii original e multimplicar número a número pelo primo escolhido
     for x in ascii+'#':
         if x == ' ' or x == '#' or x == '\n':
@@ -106,28 +104,21 @@ def multiplicar_ascii(ascii):
             #transformar em String e adicionar um espaço no final:
             xor = funcao_xor(int(ascii_multiplicado_resultado.strip()), chave_xor)
             ascii_multiplicado_resultado_xor_base62 += str(converter_para_base62(xor)) + '%'
-
-            # print(
-            #     '\n=================TESTANDO=ESCOLHA=================='
-            #     + f'\nESCOLHA ALEATORIA: {escolha_aleatoria}'
-            #     + f'\nPOSICAO DA ESCOLHA ALEATORIA: {posicao_escolha_aleatoria}'
-            #     + f'\n{ascii_atual} * {escolha_aleatoria} = {(int(ascii_atual) * escolha_aleatoria)}'
-            #     + f'\n{posicao_escolha_aleatoria} + {(int(ascii_atual) * escolha_aleatoria)} = {ascii_multiplicado_resultado}'
-            #     + f'\n APLICANDO XOR: {xor}'
-            #     + f'\nAplicando o XOR para Criptografar com base62: {ascii_multiplicado_resultado_xor_base62}'
-            #     ######## + f'\nRetirando a base62: {desconverter_base62(ascii_multiplicado_resultado_xor_base62.replace('%', ' ').strip())}'
-            #     ######## + f'\nAplicando o XOR para DESCriptografar: {funcao_xor(int(ascii_multiplicado_resultado_xor_base62.replace('%', ' ')), chave_xor)}'
-            #     '\n==================================================='
-            # )
+            # DEBUG:
+            print('================================\n'
+                + f'\nNúmero primo escolhido: {escolha_aleatoria}'
+                + f'\nPosição do número primo escolhido: {posicao_escolha_aleatoria}'
+                + f'\nPrimo X ASCII da letra atual: {ascii_multiplicado_resultado}'
+                + f'\nXOR aplicado no resultado: {xor}'
+                + f'\nXOR aplicado no resultado: {converter_para_base62(xor)}'
+            )
             ascii_atual = ''
         else:
             ascii_atual += x
-    # print(
-    #     '\n=================TESTANDO=ESCOLHA=================='
-    #     + f'\n Texto em ASCII: {ascii}'
-    #     + f'\n RESULTADO: {ascii_multiplicado_resultado_xor_base62}'
-    #     + '\n==================================================='
-    # )
+    # DEBUG:
+    print('================================\n'
+          + f'\nString em formato ASCII: {ascii}'
+          )
     return ascii_multiplicado_resultado_xor_base62
 
 
@@ -156,7 +147,7 @@ def desconverter_base62(base62):
     for i in base62:
         #Descobrir o idenx na lista do alfabeto base62 correspondente ao caractere atual da base62
         valor_index = alfabeto_base62.index(i)
-        #Remontar os restos das divisões feitas anteriormente (numero*62 + index)
+        #Remontar os restos das divisões feitas anteriormente (numero*70 + index)
         numero = numero * base + valor_index
 
     return numero
