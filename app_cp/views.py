@@ -7,7 +7,7 @@ import json
 
 CHAVE_ALFABETO_BASE62 = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'+'@#$&()[]'
 CHAVE_POSSIBILIDADE_PRIMOS = [3511, 7901, 4513, 6581, 6229, 1129, 2339, 1009, 5827]
-CHAVE_XOR = 0xF2D431B6A7C9E0D5F8B7E1C2A0F16D4F9B8E7A0C5D2F1A3B6C9E0D2A5F4B6C7
+CHAVE_XOR = 0x1A2B
 
 def home(request):
     return render(request, 'app_cp/home.html')
@@ -86,7 +86,7 @@ def texto_para_ascii(texto): # transforma o texto original em ascii
 def multiplicar_ascii(ascii): 
     # CHAVE: lista de números primos para serem escolhidos aleatoriamente
     possibilidades = CHAVE_POSSIBILIDADE_PRIMOS
-    # CHAVE:Hexadecimal de 256 bits para ser utilizado no XOR
+    # CHAVE:Hexadecimal de 16 bits para ser utilizado no XOR
     chave_xor = CHAVE_XOR
     
     ascii_atual = ''
