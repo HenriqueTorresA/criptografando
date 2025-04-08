@@ -21,8 +21,12 @@ from app_cp import views
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
-    path('home/',views.home,name='home'),
-    path('', RedirectView.as_view(url='/home/', permanent=True)),
+    path('',views.index,name='index'),
+    path('cr1/',views.cr1,name='cr1'),
+    path('cr2/',views.cr2,name='cr2'),
+    path('cr3/',views.cr3,name='cr3'),
+    path('cr4/',views.cr4,name='cr4'),
+    # path('', RedirectView.as_view(url='/index/', permanent=True)),
     path('criptografar/', views.view_criptografar, name='criptografar'),
     path('descriptografar/', views.view_descriptografar, name='descriptografar'),
 ]

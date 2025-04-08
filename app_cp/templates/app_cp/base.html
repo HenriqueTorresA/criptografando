@@ -1,0 +1,86 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="https://www.seti.com.br/wp-content/uploads/2023/02/criptografia-em-aplicatvo-1280x720-1.png">
+  <title>Criptografando</title>
+  
+  <!-- bootstrap css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
+
+
+  <!-- FullPage -> Está sendo utilizado para retirada do Swipe em algumas telas -->
+  <!-- CSS do FullPage.js -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.11/fullpage.min.css">
+
+<!-- JS do FullPage.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.11/fullpage.min.js"></script>
+
+  <style type="text/css">
+    .custom-primary-link {
+        background-color: #E3A6F3 !important;
+        border-color: #E3A6F3 !important;
+        color: black !important;
+        text-align: center !important; 
+    }
+    .custom-primary-link:hover {
+        background-color: #D891EF !important;
+        border-color: #D891EF !important;
+    }   
+  </style>
+</head>
+
+<body>
+  
+
+</head>
+
+<body>
+  <!-- Navbar -->
+
+    <nav class="navbar navbar-expand-lg" style="background-color: #008cb6; color: black;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'index' %}" style="color: black;">
+                <img src="https://www.seti.com.br/wp-content/uploads/2023/02/criptografia-em-aplicatvo-1280x720-1.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                Criptografando
+            </a>
+
+            <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index' %}" style="color: black;"><i class="bi bi-house-door"></i> Página Inicial</a>
+                    </li><hr>
+                   
+
+                            <li><a class="nav-link" href="/cr3/" style="color: black;">Criptografia</a></li>
+                            <li><a class="nav-link" href="/cr1/" style="color: black;">XOR</a></li>
+                            <li><a class="nav-link" href="/cr2/" style="color: black;">base62</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+  
+  <div class="content bg-light">
+    {% block conteudo %}
+
+    {% endblock %}
+  </div>
+  <br>
+  
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

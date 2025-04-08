@@ -1,0 +1,68 @@
+{% extends 'app_cp/base.html' %}
+{% block conteudo %}
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+
+                <h1 style="text-align: center;">Criptografando</h1>
+
+                <p>A criptografia é um método que converte textos em códigos abstratos conhecidos como ciphertexts ou textos cifrados. O propósito da criptografia é ocultar dados sensíveis, impedindo que usuários não autorizados acessem e roubem as informações.</p>
+
+                <p>Levando por este ponto de vista, desenvolvi alguns métodos para realizar critografia de informações de forma randômica, que se torna mais complexo de ser quebrado.</p>
+
+                <h5>Técnicas utilizadas</h5>
+                <ul>
+                    <li>Transformar o texto em ASCII</li>
+                    <li>Percorrer valor por valor, no texto em ASCII</li>
+                    <li>Multiplicar cada valor por um número primo aleatório de uma lista pré-definida</li>
+                    <li>Concatenar a posição do número primo na lista com o resultado</li>
+                    <li>Aplicar a técnica de comparação XOR, comparando com um valor Hexadecimal de 16 bits</li>
+                    <li>Transformar os números resultantes em base62 (um alfabeto de 62 caracteres + 8 caracteres especiais)</li>
+                    <li>Substituir espaços pelo caractere %</li>
+
+                </ul>
+                <p>A vantagem da criptografia ser randômica, é que é possível criptografar um mesmo texto tendo resultados diferentes, porém todos, no ato de descriptografia, terão o mesmo resultado, para testar isso, basta clicar no botão de "Criptografando" abaio, inserir um texto para criptografar, e clicar várias vezes no botão de criptografar.</p>
+
+                <h5>Vocabulário:</h5>
+                 
+
+                <div class="row">
+                    <p>Alfabeto base62</p> 
+                    
+                </div>
+
+
+                <table class="table table-bordered">
+                      <tbody class="table-group-divider">
+                        <tr>
+                          <td><p>O que é a técnica XOR?</p></td>
+                          <td class="d-grid gap-2"><a href="{% url 'cr1' %}" class="btn btn-outline-primary">XOR</a></td>
+                        </tr>
+                        <tr>
+                          <td><p>Alfabeto base62</p></td>
+                          <td class="d-grid gap-2"><a href="{% url 'cr2' %}" class="btn btn-outline-primary">base62</a></td>
+                        </tr>
+                      </tbody>
+                </table>
+
+
+                <br>
+                <h5>Vamos começar?</h5>
+                <p>Após a implementação do projeto acima especificado, segue o sistema de criptografia e descriptografia randômica funcional: </p>
+                <a href="{% url 'cr3' %}" class="d-grid gap-2 btn btn-outline-primary"> Criptografando </a>
+                <br><br><br><br><br>
+                
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+
+    
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+{% endblock %}

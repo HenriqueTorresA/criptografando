@@ -1,0 +1,44 @@
+{% extends 'app_cp/base.html' %}
+{% block conteudo %}
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="" style="text-align: center;">
+                <h1>base62</h1>
+            </div>
+        </div>
+    </div><br>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <h5>O que é Base62?</h5>
+                <p>Em sua essência, base62 é um sistema de codificação que deriva seu nome dos caracteres que usa para codificação. O sistema base62 emprega um conjunto de sessenta e dois caracteres, consistindo de dígitos 0-9, letras minúsculas az e letras maiúsculas AZ. Se dividirmos a contagem de caracteres, temos 10 dígitos + 26 letras minúsculas + 26 letras maiúsculas, resultando em um total de 62 caracteres.</p>
+
+                <h5>O processo de conversão</h5>
+                <p>Para converter um número decimal em base62, seguimos um processo simples usando divisão longa:</p>
+                <ol>
+                    <li>Divida o número decimal por 62.</li>
+                    <li>Registre o quociente e acompanhe o restante.</li>
+                    <li>Mapeie o restante para o caractere base62 correspondente usando sua posição dentro dos dígitos base62.</li>
+                </ol>
+
+                <p>Vamos dar um exemplo para deixar as coisas mais claras. Suponha que queremos converter o número decimal 123 para base62:</p>
+                <ol>
+                    <li>Comece dividindo 123 por 62:</li>
+                    <ul><li>123 ÷ 62 = 1 quociente resto 61</li></ul>
+                    <li>Em seguida, divida 1 por 62:</li>
+                    <ul><li>1 ÷ 62 = quociente 0 resto 1</li></ul>
+                    <li>Agora, mapeamos os restos para seus respectivos caracteres base62. Como o sistema base62 inicia seu índice em zero, o último caractere "Z" está na posição sessenta e um, e "1" está na posição um.</li>
+                </ol>
+                <p>Portanto, o número decimal 123 é convertido para "1Z" na base62.</p>
+                <br>
+                <a href="{% url 'index' %}" class="btn btn-outline-primary"> <i class="bi bi-caret-left"></i> Voltar</a>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+
+{% endblock %}

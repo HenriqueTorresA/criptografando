@@ -1,0 +1,29 @@
+{% extends 'app_cp/base.html' %}
+{% block conteudo %}
+
+<br>
+    <div class="container">
+        <div class="row">
+            <div class="" style="text-align: center;">
+                <h1>XOR</h1>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+            
+            <h5>O que é XOR?</h5>
+            <p>XOR, ou Exclusive OR, é uma operação lógica que compara dois bits e retorna verdadeiro apenas se os bits forem diferentes. Em outras palavras, o resultado da operação XOR é verdadeiro se um dos bits for verdadeiro e o outro falso. Essa propriedade torna o XOR uma ferramenta poderosa na criptografia, pois permite combinar informações de forma segura.</p>
+
+            <h5>Como o XOR é utilizado na criptografia?</h5>
+            <p>Na criptografia, o XOR é frequentemente utilizado para encriptar e desencriptar dados de forma segura. Ao aplicar a operação XOR a um conjunto de bits de dados e uma chave de encriptação, é possível garantir que apenas quem possui a chave correta consiga acessar as informações originais. Isso torna o XOR uma técnica fundamental em algoritmos de criptografia modernos.</p>
+
+                <a href="{% url 'index' %}" class="btn btn-outline-primary"> <i class="bi bi-caret-left"></i> Voltar</a>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+{% endblock %}

@@ -9,8 +9,20 @@ CHAVE_ALFABETO_BASE62 = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRS
 CHAVE_POSSIBILIDADE_PRIMOS = [3511, 7901, 4513, 6581, 6229, 1129, 2339, 1009, 5827]
 CHAVE_XOR = 0x1A2B
 
-def home(request):
-    return render(request, 'app_cp/home.html')
+def index(request):
+    return render(request, 'app_cp/index.html')
+
+def cr1(request):
+    return render(request, 'app_cp/cr1.html')
+
+def cr2(request):
+    return render(request, 'app_cp/cr2.html')
+
+def cr3(request):
+    return render(request, 'app_cp/cr3.html')
+
+def cr4(request):
+    return render(request, 'app_cp/cr4.html')
 
 #Explicação:
 #AJAX (fetch): O texto é enviado para a view encrypt_view usando uma requisição POST. O resultado é um JSON com o texto criptografado.
